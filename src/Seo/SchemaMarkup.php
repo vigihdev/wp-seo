@@ -34,6 +34,11 @@ final class SchemaMarkup extends BaseWpSeo
             (new WebSite())->render(),
             (new BreadcrumbList())->render(),
 
+            WebSite
+            BreadcrumbList
+            NewsArticle
+            LocalBusiness
+            Organization
             // (new Carousel())->render(),
             // (new RentalAkomodasiSchema())->render(),
             // (new ListinganKendaraanSchema())->render(),
