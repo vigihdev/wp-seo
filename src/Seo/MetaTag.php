@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace WpSeo;
 
-use Yiisoft\Html\Tag\{Html, Meta};
+use Yiisoft\Html\Tag\{Html, Meta, Title};
 
 final class MetaTag extends AbstractWpSeo
 {
@@ -14,7 +14,7 @@ final class MetaTag extends AbstractWpSeo
     {
         return implode(PHP_EOL, [
             // MetaTag
-            Meta::tag()->name('title')->content($this->metaTitle())->render(),
+            Title::tag()->content($this->metaTitle())->render(),
             Meta::tag()->name('description')->content($this->metaDescription())->render(),
             Meta::tag()->name('keywords')->content($this->metaKeywords())->render(),
 
