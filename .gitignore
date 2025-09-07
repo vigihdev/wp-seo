@@ -6,6 +6,9 @@
 # Dependency directories
 /vendor/
 
+# Composer
+composer.lock
+
 # Build outputs
 /build/
 /dist/
