@@ -6,7 +6,7 @@ namespace WpSeo;
 
 use WpSeo\OpenGraph\OpenGraphDispatcher;
 use WpSeo\SchemaOrg\SchemaOrgDispatcher;
-
+use WpSeo\Seo\{MetaLink, MetaTag};
 
 final class DispatcherWpSeo
 {
