@@ -1,0 +1,23 @@
+# Dependency directories dot
+.amazonq
+.github
+/.vscode
+
+# Dependency directories
+/vendor/
+
+# Build outputs
+/build/
+/dist/
+
+# Environment files dot
+.DS_Store
+.env
+.env.local
+
+# Environment files
+/server.php
+
+# IDE
+.idea/
+.phpstorm.meta.php
