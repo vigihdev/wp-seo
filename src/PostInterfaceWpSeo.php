@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace WpSeo;
 
-interface PostInterface
+interface PostInterfaceWpSeo
 {
     public function getId(): int;
 

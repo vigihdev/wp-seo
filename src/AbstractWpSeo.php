@@ -7,7 +7,7 @@ namespace WpSeo;
 use WP_Post;
 use WP_Term;
 
-abstract class AbstractWpSeo implements PostInterface
+abstract class AbstractWpSeo implements PostInterfaceWpSeo
 {
     protected ?WP_Post $post;
 

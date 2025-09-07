@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace WpSeo;
+namespace WpSeo\Seo;
 
+use WpSeo\AbstractWpSeo;
 use Yiisoft\Html\Tag\{Html, Meta, Title};
 
 final class MetaTag extends AbstractWpSeo
