@@ -40,12 +40,12 @@ final class MetaTag extends AbstractWpSeo
 
     protected function metaTitle(): string
     {
-        global $page, $paged;
+        global $page, $paged, $post;
 
         $title = '';
 
         // Get wp_title
-        $title .= wp_get_document_title();
+        $title .= $post->post_title;
 
         // Add the site name
         $title .= ' | ' . get_bloginfo('name');
