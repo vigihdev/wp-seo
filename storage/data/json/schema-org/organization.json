@@ -1,0 +1,29 @@
+{
+    "context": "https://schema.org",
+    "type": "Organization",
+    "url": "https://www.example.com",
+    "sameAs": [
+        "https://www.facebook.com/okkarent",
+        "https://www.instagram.com/okkarent",
+        "https://maps.google.com/?cid=112490629667180260644"
+    ],
+    "logo": "https://www.example.com/images/logo.png",
+    "name": "Example Corporation",
+    "description": "The example corporation is well-known for producing high-quality widgets",
+    "email": "contact@example.com",
+    "telephone": "+47-99-999-9999",
+    "image": [
+        "https://example.com/images/hero.jpg",
+        "https://example.com/images/product.jpg",
+        "https://example.com/images/thumbnail.jpg"
+    ],
+    "address": {
+        "streetAddress": "JQH3+HRW, Gg. Garuda, Sedati Gede, Kec. Sedati, Kabupaten Sidoarjo, Jawa Timur 61253",
+        "addressLocality": "Jawa Timur",
+        "addressRegion": "Surabaya Sidoarjo",
+        "postalCode": "61253",
+        "addressCountry": "ID"
+    },
+    "vatID": "FR12345678901",
+    "iso6523Code": "0199:724500PMK2A2M1SQQ228"
+}

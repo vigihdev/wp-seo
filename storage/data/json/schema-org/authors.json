@@ -1,0 +1,14 @@
+[
+    {
+        "name": "John Doe",
+        "url": "https://example.com/author/john-doe"
+    },
+    {
+        "name": "Jane Smith",
+        "url": "https://example.com/author/jane-smith"
+    },
+    {
+        "name": "Bob Wilson",
+        "url": "https://example.com/author/bob-wilson"
+    }
+]

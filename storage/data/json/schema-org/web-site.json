@@ -1,0 +1,9 @@
+{
+    "name": "CV Okkarent",
+    "description": "Agen Sewa Mobil Profesional",
+    "url": "https://okkarent.com",
+    "potentialAction": {
+        "target": "https://okkarent.com/search?q={search_term_string}",
+        "queryInput": "required name=search_term_string"
+    }
+}

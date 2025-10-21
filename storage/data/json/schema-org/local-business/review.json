@@ -1,0 +1,28 @@
+[
+    {
+        "reviewRating": {
+            "ratingValue": 4.5,
+            "bestRating": 5
+        },
+        "author": {
+            "name": "vigih",
+            "url": "https://maps.google.com/?cid=1234567890"
+        },
+        "datePublished": "2025-10-20",
+        "contentReferenceTime": "2025-10-21T09:00:00+07:00",
+        "reviewBody": "Harga sesuai kualitas, mobil bersih dan wangi."
+    },
+    {
+        "reviewRating": {
+            "ratingValue": 4.5,
+            "bestRating": 5
+        },
+        "author": {
+            "name": "Rizky",
+            "url": "https://maps.google.com/?cid=1234567890"
+        },
+        "datePublished": "2025-10-20",
+        "contentReferenceTime": "2025-10-21T09:00:00+07:00",
+        "reviewBody": "Pelayanan cepat, sopir ramah, mobil bersih."
+    }
+]

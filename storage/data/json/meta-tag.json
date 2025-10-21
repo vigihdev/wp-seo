@@ -1,0 +1,46 @@
+[
+    {
+        "name": "google-site-verification",
+        "content": "wANIFY7u5b5u0CTWr8tGSWIG4KMytYgOZS2mkAVSMSc"
+    },
+    {
+        "name": "msvalidate.01",
+        "content": "157FF5395DA0247121C6D143E028ECA2"
+    },
+    {
+        "name": "yandex-verification",
+        "content": "d9d90efd7492a230"
+    },
+    {
+        "name": "facebook-domain-verification",
+        "content": "cyhv9askq1vkpnd1krz9qo015yzccl"
+    },
+    {
+        "name": "p:domain_verify",
+        "content": "a15185b812a90cb0a2b98c0e8300386f"
+    },
+    {
+        "name": "robots",
+        "content": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    },
+    {
+        "name": "google",
+        "content": "notranslate"
+    },
+    {
+        "name": "googlebot",
+        "content": "notranslate"
+    },
+    {
+        "name": "theme-color",
+        "content": "#CC0000"
+    },
+    {
+        "name": "viewport",
+        "content": "width=device-width"
+    },
+    {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5"
+    }
+]

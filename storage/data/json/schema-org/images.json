@@ -1,0 +1,20 @@
+[
+    {
+        "imageUrl": "https://example.com/images/hero.jpg",
+        "width": 1200,
+        "height": 630,
+        "caption": "Hero image for homepage"
+    },
+    {
+        "imageUrl": "https://example.com/images/product.jpg",
+        "width": 800,
+        "height": 600,
+        "caption": "Product showcase"
+    },
+    {
+        "imageUrl": "https://example.com/images/thumbnail.jpg",
+        "width": 400,
+        "height": 300,
+        "caption": null
+    }
+]

@@ -1,0 +1,11 @@
+{
+    "title": "My Awesome Page Title",
+    "description": "This is an engaging description for social media",
+    "type": "website",
+    "url": "https://example.com/page",
+    "imageUrl": "https://example.com/images/og-image.jpg",
+    "siteName": "Example Site",
+    "locale": "en_US",
+    "imageWidth": 1200,
+    "imageHeight": 630
+}

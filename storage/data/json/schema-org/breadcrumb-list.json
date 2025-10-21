@@ -1,0 +1,22 @@
+[
+    {
+        "position": 1,
+        "name": "Home",
+        "item": "https://example.com"
+    },
+    {
+        "position": 2,
+        "name": "Category",
+        "item": "https://example.com/category"
+    },
+    {
+        "position": 3,
+        "name": "Subcategory",
+        "item": "https://example.com/category/subcategory"
+    },
+    {
+        "position": 4,
+        "name": "Current Page",
+        "item": "https://example.com/category/subcategory/page"
+    }
+]
