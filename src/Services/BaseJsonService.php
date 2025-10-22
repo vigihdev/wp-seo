@@ -19,16 +19,18 @@ abstract class BaseJsonService
         private readonly string $fileNameJson
     ) {
 
-        $dotenv = new Dotenv();
-        $dotenv->loadEnv(Path::join(getcwd(), '.env'), overrideExistingVars: true);
-        $filePathJson = Path::join(getcwd(), $_ENV['WP_SEO_STORAGE'] ?? '', $fileNameJson);
+        if (!isset($_ENV['PROJECT_DIR']) || !isset($_ENV['WP_SEO_STORAGE'])) {
+            throw new \RuntimeException("Env NOT found: PROJECT_DIR or WP_SEO_STORAGE");
+        }
 
+        $filePathJson = Path::join(realpath($_ENV['PROJECT_DIR']), $_ENV['WP_SEO_STORAGE'], $fileNameJson);
         if (!file_exists($filePathJson)) {
             throw new \RuntimeException("File not found: {$filePathJson}");
         }
 
         $this->filePathJson = $filePathJson;
     }
+
 
     protected function getDtoFromJson(string $dtoClass): object|array
     {
