@@ -25,7 +25,7 @@ final class TwitterOpenGraph extends BaseJsonService
             title: $this->post->getTitle(),
             url: $this->post->getUrl(),
             description: $this->post->getDescription(),
-            imageUrl: $this->post->getFeaturedImage(),
+            imageUrl: $this->post->getFeaturedImage() ?? '',
             type: 'website',
         );
 

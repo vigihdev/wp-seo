@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace WpSeo\Services;
 
 use Symfony\Component\Filesystem\Path;
-use Symfony\Component\Dotenv\Dotenv;
 use WpSeo\Factory\JsonTransformerFactory;
 
 abstract class BaseJsonService
@@ -19,18 +18,17 @@ abstract class BaseJsonService
         private readonly string $fileNameJson
     ) {
 
-        if (!isset($_ENV['PROJECT_DIR']) || !isset($_ENV['WP_SEO_STORAGE'])) {
-            throw new \RuntimeException("Env NOT found: PROJECT_DIR or WP_SEO_STORAGE");
+        if (!isset($_ENV['WP_SEO_STORAGE'])) {
+            throw new \RuntimeException("Env NOT found:  WP_SEO_STORAGE");
         }
 
-        $filePathJson = Path::join(realpath($_ENV['PROJECT_DIR']), $_ENV['WP_SEO_STORAGE'], $fileNameJson);
+        $filePathJson = Path::join($this->getBasePath(), $_ENV['WP_SEO_STORAGE'], $fileNameJson);
         if (!file_exists($filePathJson)) {
             throw new \RuntimeException("File not found: {$filePathJson}");
         }
 
         $this->filePathJson = $filePathJson;
     }
-
 
     protected function getDtoFromJson(string $dtoClass): object|array
     {
@@ -39,12 +37,21 @@ abstract class BaseJsonService
 
     protected function dtoTransformer(string $dtoClass, string $fileNameJson): object|array
     {
-        $filePathJson = Path::join(getcwd(), $_ENV['WP_SEO_STORAGE'] ?? '', $fileNameJson);
+        $filePathJson = Path::join($this->getBasePath(), $_ENV['WP_SEO_STORAGE'] ?? '', $fileNameJson);
 
         if (!file_exists($filePathJson)) {
             throw new \InvalidArgumentException("File not found: {$filePathJson}");
         }
 
         return JsonTransformerFactory::create($dtoClass)->transformWithFile($filePathJson);
+    }
+
+    private function getBasePath(): string
+    {
+
+        if (isset($_ENV['APP_ENV']) && $_ENV['APP_ENV'] === 'local') {
+            return getcwd();
+        }
+        return get_template_directory();
     }
 }
