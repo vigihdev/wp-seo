@@ -26,7 +26,7 @@ final class DispatcherPost implements DispatcherPostContract
 
         $this->post = new WpPostInfo(post: $postData);
 
-        return implode(PHP_EOL, [
+        $renderData = [
             $this->seoMeta()->render(),
             (new MetaLink())->render(),
             (new MetaTag())->render(),
@@ -37,7 +37,9 @@ final class DispatcherPost implements DispatcherPostContract
             (new BreadcrumbList(post: $this->post))->render(),
             (new NewsArticle(post: $this->post))->render(),
             (new WebSite())->render(),
-        ]);
+        ];
+
+        return implode(PHP_EOL, array_filter($renderData, fn(string $data) => strlen($data) > 0));
     }
 
     private function seoMeta(): SeoMetaRenderer
