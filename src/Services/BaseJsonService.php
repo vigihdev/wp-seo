@@ -48,7 +48,6 @@ abstract class BaseJsonService
 
     private function getBasePath(): string
     {
-
         if (isset($_ENV['APP_ENV']) && $_ENV['APP_ENV'] === 'local') {
             return getcwd();
         }

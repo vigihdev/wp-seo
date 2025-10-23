@@ -19,13 +19,20 @@ final class NewsArticleRenderer extends BaseSchemaOrgRenderer
     {
 
         $news = $this->newsArticle;
-        return Schema::newsArticle()
+        $authors = $news->getAuthor();
+        $schema = Schema::newsArticle()
             ->setProperty('@id', $this->schemaIdGenerator('newsArticle'))
             ->headline($news->getHeadline())
             ->datePublished($news->getDatePublished())
             ->dateModified($news->getDateModified())
-            ->author($news->getAuthor())
-            ->image($news->getImage())
-            ->toScript();
+            ->author(
+                array_map(
+                    fn($author) => Schema::person()->name($author->getName())->url($author->getUrl()),
+                    $authors
+                )
+            )
+            ->image($news->getImage());
+
+        return $schema->toScript();
     }
 }

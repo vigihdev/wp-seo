@@ -9,7 +9,7 @@ use WpSeo\Contracts\Services\DispatcherPostContract;
 use WpSeo\Entity\{WpPostInfo};
 use WpSeo\DTOs\Meta\{SeoMetaDto};
 use WpSeo\Renderers\Meta\{SeoMetaRenderer};
-use WpSeo\Services\SchemaOrg\{Organization};
+use WpSeo\Services\SchemaOrg\{Organization, BreadcrumbList, NewsArticle, WebSite, LocalBusiness};
 
 final class DispatcherPost implements DispatcherPostContract
 {
@@ -32,7 +32,11 @@ final class DispatcherPost implements DispatcherPostContract
             (new MetaTag())->render(),
             (new FacebookOpenGraph(post: $this->post))->render(),
             (new TwitterOpenGraph(post: $this->post))->render(),
+            (new LocalBusiness())->render(),
             (new Organization())->render(),
+            (new BreadcrumbList(post: $this->post))->render(),
+            (new NewsArticle(post: $this->post))->render(),
+            (new WebSite())->render(),
         ]);
     }
 

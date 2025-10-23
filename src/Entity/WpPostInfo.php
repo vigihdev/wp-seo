@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace WpSeo\Entity;
 
+use DateTime;
+use DateTimeImmutable;
+use DateTimeInterface;
+use DateTimeZone;
+use Exception;
 use WP_Post;
 use WpSeo\Contracts\Wp\WpPostInfoContract;
 
@@ -12,11 +17,23 @@ final class WpPostInfo implements WpPostInfoContract
 
     public function __construct(
         private readonly ?WP_Post $post = null
-    ) {}
+    ) {
+        $this->getDatePublished();
+    }
 
     public function getTitle(): string
     {
         return $this->post?->post_title ?? '';
+    }
+
+    public function getDatePublished(): string
+    {
+        return $this->toDateFormatAtom($this->post?->post_date ?? '') ?? '';
+    }
+
+    public function getDateModified(): string
+    {
+        return $this->toDateFormatAtom($this->post?->post_modified ?? '') ?? '';
     }
 
     public function getKeyword(): string
@@ -100,5 +117,15 @@ final class WpPostInfo implements WpPostInfoContract
         preg_match('/<img.+?src=["\']([^"\']+)["\'].*?>/i', $content, $matches);
 
         return $matches[1] ?? null;
+    }
+
+    private function toDateFormatAtom(string $date): ?string
+    {
+        try {
+            $dateTime = new DateTimeImmutable($date);
+            return $dateTime->format(DateTimeInterface::ATOM);
+        } catch (Exception $e) {
+            return null;
+        }
     }
 }
