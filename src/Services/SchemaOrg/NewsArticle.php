@@ -6,7 +6,7 @@ namespace WpSeo\Services\SchemaOrg;
 
 use WpSeo\Contracts\Wp\WpPostInfoContract;
 use WpSeo\Services\BaseService;
-use WpSeo\DTOs\SchemaOrg\{NewsArticleDto, AuthorDto};
+use WpSeo\DTOs\SchemaOrg\{NewsArticleDto, AuthorDto, ImageSimpleDto};
 use WpSeo\Renderers\SchemaOrg\NewsArticleRenderer;
 
 final class NewsArticle extends BaseService
@@ -19,12 +19,15 @@ final class NewsArticle extends BaseService
     public function render(): string
     {
 
+        /** @var ImageSimpleDto[] $defaultImages  */
+        $defaultImages = $this->dtoTransformer(ImageSimpleDto::class, 'default/post-images.json');
+        $imageDatas = $this->post->getFeaturedImage() ?
+            [$this->post->getFeaturedImage()] : array_map(fn($image) => $image->getImageUrl(), $defaultImages);
+
         $newsArticle = new NewsArticleRenderer(
             newsArticle: new NewsArticleDto(
                 headline: $this->post->getTitle(),
-                image: [
-                    $this->post->getFeaturedImage() ?? ''
-                ],
+                image: $imageDatas,
                 datePublished: $this->post->getDatePublished(),
                 dateModified: $this->post->getDateModified(),
                 author: [
