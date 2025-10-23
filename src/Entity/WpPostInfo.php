@@ -49,6 +49,12 @@ final class WpPostInfo implements WpPostInfoContract
         return $this->getAuthorInfo()?->getNicename() ?? '';
     }
 
+    public function getAuthorPostsUrl(): string
+    {
+        $authorId = $this->post?->post_author;
+        return esc_url(get_author_posts_url((int) $authorId));
+    }
+
     public function getAuthorInfo(): ?WpAuthorInfo
     {
         $authorId = $this->post?->post_author;

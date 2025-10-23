@@ -30,7 +30,7 @@ final class NewsArticle extends BaseService
                 author: [
                     new AuthorDto(
                         name: $this->post->getAuthor(),
-                        url: $this->post->getAuthorInfo()->getUrl()
+                        url: $this->post->getAuthorPostsUrl()
                     )
                 ]
             )

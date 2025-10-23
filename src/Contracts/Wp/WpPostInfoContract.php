@@ -12,6 +12,7 @@ interface WpPostInfoContract extends SeoMetaContract
     public function getUrl(): string;
     public function getDatePublished(): string;
     public function getDateModified(): string;
+    public function getAuthorPostsUrl(): string;
     public function getFeaturedImage(): ?string;
     public function getAuthorInfo(): ?WpAuthorContract;
     public function getKategori(): ?WpKategoriContract;
